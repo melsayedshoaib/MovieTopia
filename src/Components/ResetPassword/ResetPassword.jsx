@@ -13,7 +13,7 @@ export default function ResetPassword() {
   const [errMsg, setErrMsg] = useState('');
   async function sendDate(values) {
     setLoading(true);
-    let {data} = await axios.put("https://route-ecommerce.onrender.com/api/v1/auth/resetPassword", values).catch((err) => {
+    let {data} = await axios.put("https://route-ecommerce-app.vercel.app/api/v1/auth/resetPassword", values).catch((err) => {
       setLoading(false)
       setErrMsg(err.response.data.message);
     });
