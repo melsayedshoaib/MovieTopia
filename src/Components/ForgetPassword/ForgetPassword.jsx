@@ -10,14 +10,14 @@ export default function ForgetPassword() {
   const [flag, setFlag] = useState(false);
   const [errMsg, setErrMsg] = useState("");
   async function forgetPassword(val) {
-    let { data } = await axios.post("https://route-ecommerce.onrender.com/api/v1/auth/forgotPasswords", val)
+    let { data } = await axios.post("https://route-ecommerce-app.vercel.app/api/v1/auth/forgotPasswords", val)
     setLoading(false);
     if(data.statusMsg === 'success') {
       setFlag(true);
     }
   }
   async function resetPassword(val) {
-    let { data } = await axios.post("https://route-ecommerce.onrender.com/api/v1/auth/verifyResetCode", val).catch((err) => {
+    let { data } = await axios.post("https://route-ecommerce-app.vercel.app/api/v1/auth/verifyResetCode", val).catch((err) => {
       setLoading(false);
       setErrMsg(err.response.data.message);
     })
