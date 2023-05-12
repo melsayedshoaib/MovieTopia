@@ -12,7 +12,7 @@ export default function Register() {
   const [errMsg, setErrMsg] = useState('');
   async function sendDate(values) {
     setLoading(true);
-    let { data } = await axios.post("https://route-ecommerce.onrender.com/api/v1/auth/signup", values).catch((err) => {
+    let { data } = await axios.post("https://route-ecommerce-app.vercel.app/api/v1/auth/signup", values).catch((err) => {
       setLoading(false)
       setErrMsg(err.response.data.message);
     });
